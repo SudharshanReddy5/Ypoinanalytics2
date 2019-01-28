@@ -26,11 +26,12 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-8SJ452B</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgtX7o96h9Ey0OxMdlrqCPwAAAAACAAAAAAAQZgAAAAEAACAAAABflJIh5RW+XcvSA3VvN4yvHKXn5OL+fZb/rggK3VR9OwAAAAAOgAAAAAIAACAAAAALd+ela6jL6EKojmmm52FksXGdAwb8h7pCaAH8AvvsWpAAAAAMCL6biUg9rmm/irVoPf/wxtJtWaHdQq4HYb8VrNL35H0YOakgyaaB7xNcAE8nDN3sVsjcX3g5nIWswHpybQ57gC8v0G6VEO476ZftPQ9rC+iSvqSdOf6H8a00XfN5qGrQ8wd5IL+uccg7cxDyc70Fy+xL0kdeBa6Rkq2QRb3z/pjost3vuKywxB4AKmMAXuRAAAAA6zmmovrMck2Oj3195wf9BQuHju8pCQrJ1GK3Alnuhqv4apmBapJklU3b1u56do+oXYYz4KtBhebP/ErK2rcpKQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgtX7o96h9Ey0OxMdlrqCPwAAAAACAAAAAAAQZgAAAAEAACAAAACAhSNSIrRSRt1UgcmSRFl+TxQN+Wbz1E8MrAqnsVZsigAAAAAOgAAAAAIAACAAAAA1R2PYENv5qOFET0//Jai7ay/CI2n9XW4JYcmzNNFsgZAAAADldiJsNmt0UnJcbiZxkfIO9KXEaQwwEPXWcorK0T7VhPqmEuifllqdT4orqgnnqX5uNhCZiTjpnUHU3HI0TqfbgGvB/WgBAdrhNN03h+Rh2eOozfNfUbvLDM5TTKjdJ8RdZggv3/X6EYMHhYRqN5gtjr2ppyS/pBhIMKMBL00CIjj4I0yH2j7kN/lCfSt5Zp5AAAAAjpvaggZJchhEJ+tLWPxTeynCQw0/HYMkDDT8tEhPp7WUenhG3FIo/6qwYDn4Wc7mO0lFWOFDkOwohDBAib+PCA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="XML1.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="XML2.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="DESKTOP-8SJ452B.Practice_SR.conmgr" />
@@ -222,10 +223,27 @@
                 <SSIS:Property SSIS:Name="Name">XML1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{64A99FBD-3084-4D52-85E5-91D391E13E5A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="XML2.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{B3A896FB-768C-423A-9263-1C5DEB16AEBB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">XML2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{6A6485D0-40FB-4CBD-B4D1-8D4F0863C780}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{74BFBFF3-B1BF-4DB2-B188-C0AC531AA460}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
