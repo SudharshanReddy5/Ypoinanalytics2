@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="XML1"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{64A99FBD-3084-4D52-85E5-91D391E13E5A}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{E23680CE-A43B-4739-98B9-AE64F7134E13}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -31,94 +31,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Person\Derived Column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Person\Derived Column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Person\Derived Column.Inputs[Derived Column Input].Columns[FirstName]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="FirstName"
-                      lineageId="Package\Person\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]" />
-                    <inputColumn
-                      refId="Package\Person\Derived Column.Inputs[Derived Column Input].Columns[LastName]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="LastName"
-                      lineageId="Package\Person\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Person\Derived Column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Person\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Person\Derived Column.Outputs[Derived Column Output].Columns[Name]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="101"
-                      lineageId="Package\Person\Derived Column.Outputs[Derived Column Output].Columns[Name]"
-                      name="Name"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">#{Package\Person\OLE DB Source.Outputs[OLE DB Source Output].Columns[FirstName]} + " " + #{Package\Person\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">FirstName + " " + LastName</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Person\Derived Column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Person\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Person\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Person\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Person\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Person\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Person\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
@@ -236,13 +148,6 @@
                       cachedName="ModifiedDate"
                       externalMetadataColumnId="Package\Person\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
                       lineageId="Package\Person\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]" />
-                    <inputColumn
-                      refId="Package\Person\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Name]"
-                      cachedDataType="wstr"
-                      cachedLength="101"
-                      cachedName="Name"
-                      externalMetadataColumnId="Package\Person\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                      lineageId="Package\Person\Derived Column.Outputs[Derived Column Output].Columns[Name]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -653,13 +558,8 @@
           </components>
           <paths>
             <path
-              refId="Package\Person.Paths[Derived Column Output]"
-              endId="Package\Person\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Person\Derived Column.Outputs[Derived Column Output]" />
-            <path
               refId="Package\Person.Paths[OLE DB Source Output]"
-              endId="Package\Person\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Person\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Person\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
@@ -690,7 +590,7 @@
     design-time-name="Package\Person">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Person\OLE DB Source"
@@ -699,46 +599,20 @@
           Size="170.4,41.6"
           Id="Package\Person\OLE DB Destination"
           TopLeft="186.285717458142,198.82353220019" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Person\Derived Column"
-          TopLeft="202.285717730619,121.364707315174" />
         <EdgeLayout
           Id="Package\Person.Paths[OLE DB Source Output]"
-          TopLeft="276.17143198714,85.0352947268107">
+          TopLeft="272.571431850901,85.0352947268107">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.3294125883637"
+              EndConnector="0,113.788237473379"
               Start="0,0"
-              End="0,28.8294125883637">
+              End="0,106.288237473379">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.8294125883637" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Person.Paths[Derived Column Output]"
-          TopLeft="275.085717594381,162.964707315174">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.8588248850156"
-              Start="0,0"
-              End="0,28.3588248850156">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.3588248850156" />
+                    End="0,106.288237473379" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

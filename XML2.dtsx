@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="XML2"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{74BFBFF3-B1BF-4DB2-B188-C0AC531AA460}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{86EA212A-B0E9-43C4-B845-1FBBB58AC7B5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -50,7 +50,7 @@
         <NodeLayout
           Size="145.6,41.6"
           Id="Package\TruncateTable"
-          TopLeft="254.285718616174,108.282354459796" />
+          TopLeft="201.1428605683,100.329413171788" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
